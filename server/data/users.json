@@ -1,0 +1,12 @@
+[
+  {
+    "id": "8c87f4d079a90bb8",
+    "username": "admin",
+    "passwordHash": "592883d10790b8bc295bf6f38b6915d2:4148ea3618f57f97434ec793ec264969fbc6433e178ed9dfd14a5bb232d37c12bd9d0c3b20e797413fda76e4d30246ed028563c1a061ff51603237c7b43bfc1f",
+    "displayName": "CyberAdmin",
+    "role": "admin",
+    "theme": "neonCyber",
+    "createdAt": "2026-03-25T09:13:14.938Z",
+    "gameState": null
+  }
+]

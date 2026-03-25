@@ -1,0 +1,17 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "frontend",
+      "runtimeExecutable": "/Users/vishalmishra/.nvm/versions/node/v22.16.0/bin/node",
+      "runtimeArgs": ["node_modules/.bin/vite"],
+      "port": 5173
+    },
+    {
+      "name": "monitor",
+      "runtimeExecutable": "/Users/vishalmishra/.nvm/versions/node/v22.16.0/bin/node",
+      "runtimeArgs": ["server/index.js"],
+      "port": 3002
+    }
+  ]
+}

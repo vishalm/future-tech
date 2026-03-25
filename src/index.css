@@ -1,0 +1,145 @@
+@import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Press+Start+2P&display=swap');
+
+:root {
+  /* Theme vars are set dynamically by ThemeContext — these are fallback defaults */
+  --bg: #0a0a1a;
+  --bg-secondary: #0f0f2a;
+  --card: #12122a;
+  --card-hover: #1a1a3a;
+  --accent: #00f0ff;
+  --accent2: #ff00e5;
+  --accent3: #39ff14;
+  --text: #ffffff;
+  --text-dim: rgba(255,255,255,0.5);
+  --text-muted: rgba(255,255,255,0.3);
+  --border: rgba(0,240,255,0.2);
+  --success: #39ff14;
+  --danger: #ff0064;
+  --warning: #ffe600;
+  --xp-color: #39ff14;
+  --gradient-primary: linear-gradient(135deg, #00f0ff, #b026ff);
+  --gradient-secondary: linear-gradient(135deg, #ff00e5, #ff6b00);
+  --gradient-success: linear-gradient(135deg, #39ff14, #00f0ff);
+  --gradient-card: rgba(18, 18, 42, 0.9);
+  --glow-accent: 0 0 15px rgba(0,240,255,0.3);
+  --glow-success: 0 0 15px rgba(57,255,20,0.3);
+  --nav-bg: rgba(10, 10, 26, 0.9);
+  --nav-border: rgba(0, 240, 255, 0.3);
+  --ticker-bg: rgba(10, 10, 26, 0.95);
+  --ticker-border: rgba(255, 0, 229, 0.3);
+  --ticker-badge: linear-gradient(135deg, #ff00e5, #b026ff);
+
+  --font-main: 'Fredoka', sans-serif;
+  --font-pixel: 'Press Start 2P', monospace;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--font-main);
+  background: var(--bg);
+  color: var(--text);
+  overflow-x: hidden;
+  min-height: 100vh;
+  transition: background 0.4s ease, color 0.3s ease;
+}
+
+#root {
+  min-height: 100vh;
+  width: 100%;
+  max-width: 100%;
+  border: none;
+  text-align: left;
+  display: block;
+}
+
+/* ═══════ SCROLLBAR ═══════ */
+::-webkit-scrollbar { width: 8px; }
+::-webkit-scrollbar-track { background: var(--bg); }
+::-webkit-scrollbar-thumb { background: var(--accent2); border-radius: 4px; }
+::-webkit-scrollbar-thumb:hover { background: var(--accent); }
+
+::selection {
+  background: var(--accent2);
+  color: #000;
+}
+
+/* ═══════ ESPORTS UTILITY CLASSES ═══════ */
+
+.arena-card {
+  background: var(--gradient-card);
+  border: 2px solid var(--border);
+  border-radius: 20px;
+  backdrop-filter: blur(10px);
+  transition: border-color 0.3s, box-shadow 0.3s, transform 0.2s;
+}
+
+.arena-card:hover {
+  border-color: var(--accent);
+  box-shadow: var(--glow-accent);
+}
+
+.led-text {
+  font-family: var(--font-pixel);
+  text-shadow: 0 0 10px currentColor;
+}
+
+.scoreboard-glow {
+  box-shadow: 0 0 20px var(--accent), inset 0 0 20px rgba(0,0,0,0.5);
+  border: 2px solid var(--accent);
+}
+
+.gradient-text {
+  background: var(--gradient-primary);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.btn-primary {
+  background: var(--gradient-primary);
+  border: none;
+  border-radius: 14px;
+  color: #000;
+  cursor: pointer;
+  font-family: var(--font-main);
+  font-weight: 700;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.btn-primary:hover {
+  transform: scale(1.03);
+  box-shadow: var(--glow-accent);
+}
+
+/* ═══════ ANIMATIONS ═══════ */
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-20px); }
+}
+
+@keyframes pulse-glow {
+  0%, 100% { box-shadow: 0 0 5px var(--accent), 0 0 10px var(--accent); }
+  50% { box-shadow: 0 0 20px var(--accent), 0 0 40px var(--accent), 0 0 60px var(--accent); }
+}
+
+@keyframes spin-slow {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  25% { transform: translateX(-5px) rotate(-1deg); }
+  75% { transform: translateX(5px) rotate(1deg); }
+}
+
+@keyframes led-flicker {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.8; }
+}
