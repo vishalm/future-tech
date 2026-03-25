@@ -684,7 +684,7 @@ app.get('/api/admin/stats', authMiddleware, adminMiddleware, (req, res) => {
 
 // SPA catch-all: serve index.html for client-side routes (must be after all API routes)
 if (existsSync(DIST_DIR)) {
-  app.get('*', (req, res) => {
+  app.get('/{*path}', (req, res) => {
     res.sendFile(join(DIST_DIR, 'index.html'));
   });
 }
