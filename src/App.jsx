@@ -18,7 +18,11 @@ import Leaderboard from './pages/Leaderboard';
 import Competitions from './pages/Competitions';
 import Settings from './pages/Settings';
 import Admin from './pages/Admin';
-import { useEffect } from 'react';
+import Timeline from './pages/Timeline';
+import CursorGlow from './components/CursorGlow';
+import LiveClock from './components/LiveClock';
+import LevelUpCelebration from './components/LevelUpCelebration';
+import { useEffect, useState, useRef } from 'react';
 
 function AppContent() {
   const auth = useAuth();
@@ -54,6 +58,16 @@ function AppContent() {
   const level = game.getCurrentLevel();
   const xpProgress = game.getXPProgress();
 
+  // Level-up detection
+  const [showLevelUp, setShowLevelUp] = useState(false);
+  const prevLevelRef = useRef(level.level);
+  useEffect(() => {
+    if (level.level > prevLevelRef.current) {
+      setShowLevelUp(true);
+    }
+    prevLevelRef.current = level.level;
+  }, [level.level]);
+
   // Not authenticated — show login
   if (!auth.isAuthenticated && !auth.loading) {
     return (
@@ -86,7 +100,10 @@ function AppContent() {
   return (
     <>
       <ParticleField />
+      <CursorGlow />
+      <LiveClock />
       <AchievementPopup achievement={game.newAchievement} />
+      <LevelUpCelebration level={level} show={showLevelUp} onDone={() => setShowLevelUp(false)} />
       <NewsTicker />
 
       <Navbar
@@ -131,6 +148,9 @@ function AppContent() {
           } />
           <Route path="/news" element={
             <NewsChallenge addXP={game.addXP} tracking={tracking} />
+          } />
+          <Route path="/timeline" element={
+            <Timeline tracking={tracking} />
           } />
           <Route path="/leaderboard" element={
             <Leaderboard user={auth.user} tracking={tracking} />

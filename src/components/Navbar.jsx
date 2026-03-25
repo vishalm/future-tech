@@ -1,10 +1,11 @@
 import { motion } from 'framer-motion';
 import { useNavigate, useLocation } from 'react-router-dom';
-import { Home, Book, Newspaper, Trophy, ChartBar, Podium, Bracket, Rocket, Settings, Controller, Shield } from './Icons';
+import { Home, Book, Newspaper, Trophy, ChartBar, Podium, Bracket, Rocket, Settings, Controller, Shield, Galaxy } from './Icons';
 
 const baseNavItems = [
   { path: '/', label: 'Home', Icon: Home },
   { path: '/modules', label: 'Learn', Icon: Book },
+  { path: '/timeline', label: 'Timeline', Icon: Galaxy },
   { path: '/news', label: 'News', Icon: Newspaper },
   { path: '/leaderboard', label: 'Ranks', Icon: Podium },
   { path: '/competitions', label: 'Battle', Icon: Bracket },
