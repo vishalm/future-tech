@@ -500,6 +500,29 @@ export const Palette = (p) => (
   </Icon>
 );
 
+// ═══════ NAVIGATION ICONS ═══════
+
+export const Menu = (p) => (
+  <Icon {...p}>
+    <line x1="4" y1="6" x2="20" y2="6" />
+    <line x1="4" y1="12" x2="20" y2="12" />
+    <line x1="4" y1="18" x2="20" y2="18" />
+  </Icon>
+);
+
+export const XClose = (p) => (
+  <Icon {...p}>
+    <line x1="18" y1="6" x2="6" y2="18" />
+    <line x1="6" y1="6" x2="18" y2="18" />
+  </Icon>
+);
+
+export const ChevronDown = (p) => (
+  <Icon {...p}>
+    <polyline points="6 9 12 15 18 9" />
+  </Icon>
+);
+
 // ═══════ ICON MAP (for dynamic rendering by name) ═══════
 
 export const iconMap = {
@@ -510,6 +533,7 @@ export const iconMap = {
   Lock, Lightbulb, Star, Check, Clock, ArrowRight, Plus, UserIcon, Settings, Shield,
   Controller, Headset, Monitor, Scoreboard, Bracket, Podium, Crosshair, WildCard,
   Rocket, Satellite, Dna, Globe, Microscope, Drone, Logout, Refresh, Palette,
+  Menu, XClose, ChevronDown,
 };
 
 // Render icon by name string

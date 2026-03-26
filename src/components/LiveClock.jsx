@@ -14,9 +14,9 @@ export default function LiveClock() {
   const tz = Intl.DateTimeFormat().resolvedOptions().timeZone;
 
   return (
-    <div style={{
+    <div className="live-clock-container" style={{
       position: 'fixed',
-      top: 70,
+      top: 62,
       right: 12,
       zIndex: 998,
       display: 'flex',
